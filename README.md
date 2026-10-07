@@ -27,17 +27,17 @@
 #### Harm Map Worksheet
 | Trường | Phân tích của tôi |
 | --- | --- |
-| High-risk moment | [Tình huống cụ thể có rủi ro] |
-| Stakeholder bị ảnh hưởng | [Người dùng và các bên liên quan] |
-| Failure mode | [Kiểu lỗi AI] |
-| Layer bắt đầu lỗi | [UX / Grounding / Safety / Model; giải thích hoặc ghi chưa đủ bằng chứng] |
-| Harm xảy ra là gì? | [Ai bị ảnh hưởng + hậu quả; ghi rõ đã xảy ra hay mới là nguy cơ] |
-| Harm lens | [Loại tác hại] |
-| Severity | [Low / Medium / High / Critical] |
-| Scale | [Quy mô tác động và căn cứ] |
-| Probability | [Khả năng xảy ra và căn cứ] |
-| Frequency | [Tần suất và căn cứ] |
-| Vì sao? | [Lý do cho các đánh giá; nguồn hoặc giới hạn bằng chứng] |
+| High-risk moment | Thời điểm mô hình học máy tự động chấm điểm xếp hạng (1 đến 5 sao) cho hồ sơ xin việc và tạo danh sách đề xuất ứng viên đạt tiêu chuẩn cho nhà tuyển dụng để quyết định mời phỏng vấn sơ loại. |
+| Stakeholder bị ảnh hưởng | - Ứng viên nữ nộp đơn vào các vị trí kỹ sư phần mềm (người bị tác động trực tiếp).<br>- Chuyên viên tuyển dụng của Amazon (người dùng bị dẫn dắt bởi gợi ý thiên lệch).<br>- Tập đoàn Amazon (chịu tổn thất uy tín, lãng phí nguồn lực đầu tư).<br>- Cộng đồng phụ nữ trong ngành công nghệ (chịu bất bình đẳng kéo dài). |
+| Failure mode | Bias / fairness (kết quả phân loại bất lợi và không công bằng đối với nhóm ứng viên nữ, kết hợp với Over-reliance khi nhà tuyển dụng có xu hướng tin tưởng vào xếp hạng sao của hệ thống). |
+| Layer bắt đầu lỗi | Grounding & Model:<br>- *Grounding*: Tập dữ liệu huấn luyện (Training Data) thu thập trong 10 năm phản ánh thực trạng nam giới áp đảo trong quá khứ, khiến AI coi các đặc tính của nam giới là tiêu chuẩn thành công.<br>- *Model*: Thuật toán tối ưu hóa nhận diện các mối tương quan ngầm (proxy variables) để phạt điểm từ khóa liên quan đến phụ nữ mà không có ràng buộc về công bằng (fairness constraints). |
+| Harm xảy ra là gì? | Ứng viên nữ bị tước đoạt cơ hội việc làm và phỏng vấn tại tập đoàn công nghệ khi hệ thống tự động trừ điểm các hồ sơ có từ khóa nữ giới; tập đoàn Amazon bị lãng phí 4 năm nghiên cứu và tổn hại uy tín thương hiệu khi sự cố bị phanh phui (đã xảy ra trong thử nghiệm nội bộ, ngăn chặn kịp thời trước khi đưa ra sản xuất). |
+| Harm lens | Opportunity loss (mất cơ hội việc làm và thu nhập) và Dignity loss (tổn hại phẩm giá do bị đối xử bất công vì giới tính). |
+| Severity | High. Quyết định tuyển dụng ảnh hưởng sâu sắc đến thu nhập, lộ trình sự nghiệp và an sinh của cá nhân, đồng thời củng cố rào cản bất bình đẳng giới trong ngành công nghệ cao (chưa đến mức Critical vì không gây tổn thương thể chất hay tử vong). |
+| Scale | Medium đến High. Trong nội bộ Amazon, dự án chạy thử 500 mô hình trên hàng chục nghìn hồ sơ trong 10 năm. Nếu được đưa vào môi trường sản xuất chính thức, quy mô tác động sẽ lên tới hàng trăm nghìn ứng viên toàn cầu mỗi năm. |
+| Probability | High (theo đánh giá cá nhân dựa trên phân tích kỹ thuật của Reuters): Mô hình mang tính tất định dựa trên trọng số đã học, do đó gần như 100% hồ sơ chứa từ khóa phụ nữ đều bị phạt điểm cho đến khi được kỹ sư can thiệp thủ công. |
+| Frequency | High (theo đánh giá cá nhân): Xảy ra lặp đi lặp lại trong mọi lượt chạy quét hàng loạt (batch screening) đối với hồ sơ ứng viên nữ. |
+| Vì sao? | - Đánh giá Severity là High vì tuyển dụng là quyết định có mức độ tác động cao (high-stakes) tới cơ hội sống và việc làm của con người.<br>- Đánh giá Probability và Frequency là High vì thuật toán tự động phạt điểm có tính hệ thống.<br>- Đánh giá Scale dựa trên quy mô thử nghiệm 500 mô hình của Amazon được Reuters ghi nhận.<br>- Giới hạn bằng chứng: Nguồn tin Reuters và Amazon không công bố số lượng tuyệt đối ứng viên nữ đã bị mô hình chấm điểm thấp trong các đợt chạy thử nội bộ. |
 
 ### 3. Case study 2 — HireVue Video Interview Facial Analysis
 #### Brief Case
@@ -57,17 +57,17 @@
 #### Harm Map Worksheet
 | Trường | Phân tích của tôi |
 | --- | --- |
-| High-risk moment | [Điền] |
-| Stakeholder bị ảnh hưởng | [Điền] |
-| Failure mode | [Điền] |
-| Layer bắt đầu lỗi | [Điền] |
-| Harm xảy ra là gì? | [Điền; phân biệt hậu quả đã xảy ra với nguy cơ] |
-| Harm lens | [Điền] |
-| Severity | [Điền] |
-| Scale | [Điền] |
-| Probability | [Điền] |
-| Frequency | [Điền] |
-| Vì sao? | [Điền căn cứ và giới hạn bằng chứng] |
+| High-risk moment | Thời điểm mô hình Computer Vision phân tích video phỏng vấn, tính toán điểm số biểu cảm khuôn mặt và xếp hạng ứng viên trong vòng sơ tuyển trước khi chuyên viên tuyển dụng có cơ hội tiếp xúc. |
+| Stakeholder bị ảnh hưởng | - Ứng viên khuyết tật, người mắc chứng tự kỷ, rối loạn lo âu xã hội, hoặc có tật máy cơ mặt (bị phân biệt đối xử).<br>- Ứng viên đa văn hóa hoặc nói tiếng Anh không bản xứ (bị bất lợi do chuẩn mực giao tiếp mắt).<br>- Doanh nghiệp tuyển dụng (rủi ro vi phạm pháp luật lao động và bỏ lỡ ứng viên giỏi).<br>- Công ty HireVue (đối mặt khủng hoảng truyền thông và điều tra pháp lý). |
+| Failure mode | Bias / fairness (phân biệt đối xử với ứng viên khuyết tật và khác biệt thần kinh) kết hợp Harmful advice (AI đưa ra điểm số đánh giá năng lực sai lệch dựa trên đặc điểm hình thể không liên quan). |
+| Layer bắt đầu lỗi | Model & UX:<br>- *Model*: Thuật toán gán ghép tùy tiện cử động cơ mặt với năng lực làm việc mà không có căn cứ tâm lý học hay khoa học thần kinh hợp lệ.<br>- *UX*: Giao diện phỏng vấn video một chiều tạo áp lực cao, không cung cấp cơ chế hỗ trợ (accessibility options) hoặc hình thức thay thế cho ứng viên khuyết tật. |
+| Harm xảy ra là gì? | Ứng viên khuyết tật hoặc có biểu cảm khuôn mặt dị biệt bị đánh rớt oan uổng và tổn thương tâm lý khi thuật toán Computer Vision quy chụp chuyển động cơ mặt với năng lực chuyên môn; doanh nghiệp tuyển dụng đối mặt rủi ro pháp lý và mất ứng viên tài năng (hậu quả thực tế đã diễn ra trong nhiều năm trước khi tính năng bị gỡ bỏ). |
+| Harm lens | Opportunity loss (mất cơ hội việc làm), Dignity loss (tổn hại phẩm giá khi bị đánh giá năng lực qua ngoại hình), và Misinformation (hệ thống cung cấp điểm số sai lệch về năng lực ứng viên). |
+| Severity | High. Tước đoạt cơ hội việc làm của ứng viên dựa trên đặc điểm thể chất ngoài ý muốn, gây tổn thương tâm lý và vi phạm nghiêm trọng quyền bình đẳng của người khuyết tật. |
+| Scale | High. Hơn 700 tập đoàn lớn trên toàn cầu sử dụng hệ thống, xử lý hàng triệu cuộc phỏng vấn video của ứng viên trên toàn thế giới trong giai đoạn 2014–2020. |
+| Probability | High (theo đánh giá cá nhân dựa trên phân tích của kiểm toán ORCAA): Khả năng một ứng viên có biểu cảm khuôn mặt khác thường bị chấm điểm thấp là rất cao do mô hình được chuẩn hóa theo biểu cảm của nhóm đa số. |
+| Frequency | High. Diễn ra liên tục trong tất cả các cuộc phỏng vấn video có bật tính năng phân tích khuôn mặt trên nền tảng của HireVue trước tháng 01/2021. |
+| Vì sao? | - Đánh giá Severity là High vì ảnh hưởng trực tiếp đến quyền bình đẳng và cơ hội việc làm của các nhóm yếu thế trong xã hội.<br>- Đánh giá Scale là High dựa trên số liệu thực tế được Washington Post và Wired ghi nhận (700+ doanh nghiệp, hàng triệu ứng viên).<br>- Đánh giá Probability và Frequency là High vì tính năng quét mặt chạy tự động trên mọi video nộp vào.<br>- Giới hạn bằng chứng: Số lượng cụ thể các ứng viên khuyết tật bị từ chối không được công bố công khai do chính sách bảo mật nội bộ của HireVue và các khách hàng doanh nghiệp. |
 
 ### 4. Case study 3 — iTutorGroup Age Discrimination Software
 #### Brief Case
@@ -87,14 +87,14 @@
 #### Harm Map Worksheet
 | Trường | Phân tích của tôi |
 | --- | --- |
-| High-risk moment | [Điền] |
-| Stakeholder bị ảnh hưởng | [Điền] |
-| Failure mode | [Điền] |
-| Layer bắt đầu lỗi | [Điền] |
-| Harm xảy ra là gì? | [Điền; phân biệt hậu quả đã xảy ra với nguy cơ] |
-| Harm lens | [Điền] |
-| Severity | [Điền] |
-| Scale | [Điền] |
-| Probability | [Điền] |
-| Frequency | [Điền] |
-| Vì sao? | [Điền căn cứ và giới hạn bằng chứng] |
+| High-risk moment | Thời điểm ứng viên gửi đơn xin việc trực tuyến có điền thông tin ngày tháng năm sinh, hệ thống kích hoạt logic lọc tự động và lập tức đưa ra quyết định từ chối hồ sơ (auto-rejection) mà không có sự xem xét của con người. |
+| Stakeholder bị ảnh hưởng | - Ứng viên lớn tuổi (nữ từ 55 tuổi trở lên, nam từ 60 tuổi trở lên) bị tước đoạt cơ hội việc làm.<br>- Học sinh và phụ huynh (mất cơ hội học tập với giáo viên giàu kinh nghiệm sư phạm).<br>- Công ty iTutorGroup (bị phạt 365.000 USD, chịu giám sát tư pháp 5 năm, mất uy tín thương hiệu).<br>- Cơ quan quản lý EEOC (phải tiến hành điều tra và khởi kiện để bảo vệ công lý lao động). |
+| Failure mode | Bias / fairness (phân biệt đối xử công khai và có chủ đích theo độ tuổi) kết hợp Escalation failure (hệ thống tự động loại bỏ dứt điểm mà không chuyển tiếp hồ sơ cho chuyên viên nhân sự kiểm tra). |
+| Layer bắt đầu lỗi | Safety & Grounding:<br>- *Safety*: Hệ thống hoàn toàn thiếu vắng lớp rào chắn an toàn (Guardrails) để ngăn chặn việc cài đặt tiêu chí lọc vi phạm pháp luật lao động (Đạo luật ADEA cấm phân biệt tuổi tác từ 40 trở lên).<br>- *Grounding*: Logic nghiệp vụ của hệ thống sử dụng trường dữ liệu năm sinh làm điều kiện loại trừ tuyệt đối (hard filter) thay vì đánh giá năng lực giảng dạy. |
+| Harm xảy ra là gì? | Hơn 200 ứng viên lớn tuổi đủ tiêu chuẩn bị hệ thống tự động từ chối trái pháp luật chỉ vì độ tuổi, làm mất sinh kế và tổn hại phẩm giá nghề nghiệp; công ty iTutorGroup bị phạt 365.000 USD và chịu 5 năm giám sát tư pháp (hậu quả thực tế đã được tòa án liên bang phán quyết). |
+| Harm lens | Opportunity loss (mất cơ hội việc làm và thu nhập) và Dignity loss (tổn hại phẩm giá do bị phân biệt đối xử vì tuổi tác). |
+| Severity | High. Tước đoạt trực tiếp quyền lợi lao động hợp pháp của hơn 200 con người, vi phạm trắng trợn luật pháp liên bang Hoa Kỳ về chống phân biệt đối xử trong việc làm. |
+| Scale | Medium. Quy mô được xác định chính xác theo hồ sơ tòa án là hơn 200 ứng viên đủ tiêu chuẩn bị từ chối trực tiếp tại Hoa Kỳ trong giai đoạn công ty áp dụng thuật toán lọc này. |
+| Probability | High / 100% (căn cứ vào phán quyết tòa án): Do đây là quy tắc cứng (hardcoded rule) được lập trình trong thuật toán, xác suất một ứng viên đạt ngưỡng tuổi bị tự động từ chối là 100% khi điền đúng năm sinh. |
+| Frequency | High. Lặp lại tuyệt đối đối với mọi hồ sơ của ứng viên lớn tuổi nộp vào hệ thống trong suốt thời gian quy tắc lọc này hoạt động. |
+| Vì sao? | - Đánh giá Severity là High vì xâm phạm quyền dân sự và cơ hội sinh kế chính đáng của người lao động.<br>- Đánh giá Scale dựa trên con số chính thức hơn 200 ứng viên trong thông cáo báo chí của EEOC và phán quyết của Tòa án Liên bang Quận Đông New York.<br>- Đánh giá Probability và Frequency là 100% / High vì quy tắc lọc mang tính cơ học, không có độ ngẫu nhiên.<br>- Giới hạn bằng chứng: Hồ sơ công khai không nêu rõ danh tính cá nhân từng ứng viên để bảo vệ quyền riêng tư theo thỏa thuận hòa giải (Consent Decree). |
